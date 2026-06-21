@@ -18,6 +18,23 @@
 
 ---
 
+## ⚡ Quick Evaluation Path
+
+VERDANT is designed to be explored immediately.
+
+1. **Open** the application.
+2. Click **Step Inside**.
+3. **Enter** a sustainability story (e.g., *"I biked to college today"*).
+4. **Observe** the AI-generated carbon analysis.
+5. **Watch** the sanctuary evolve.
+6. **Explore** your EcoTwin Identity.
+7. **Compare** future outcomes using the Earth Oracle.
+
+> [!NOTE]
+> No account creation is required to experience the core functionality.
+
+---
+
 ## Engineering Highlights
 
 | Area | Implementation |
@@ -465,6 +482,16 @@ Open [http://localhost:3000](http://localhost:3000). Click **Step Inside** to en
 ```bash
 npm test
 ```
+
+### Validation Summary
+
+VERDANT was validated through:
+- **103 automated tests** (covering unit, integration, and E2E accessibility tiers)
+- **Unit testing** for ecosystem calculations and archetype assignment
+- **Integration testing** for Gemini analysis and Oracle projections
+- **Accessibility testing** for high contrast and reduced motion modes
+- **Production deployment verification** on Vercel
+- **End-to-end interaction testing** of the complete user journey
 
 ---
 

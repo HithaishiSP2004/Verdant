@@ -524,13 +524,19 @@ export default function SanctuaryPage() {
             transition={prefersReducedMotion ? { duration: 0 } : { type: 'spring', stiffness: 80, damping: 16 }}
             className="absolute top-28 left-6 bottom-28 w-80 nature-card p-6 flex flex-col overflow-y-auto z-20 pointer-events-auto"
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-4">
               <span className="text-xs uppercase tracking-widest text-text-secondary">EcoTwin Spirit</span>
               <button onClick={() => setActivePanel(null)} className="text-text-secondary hover:text-white">✕</button>
             </div>
             
             <h2 className="font-serif text-2xl font-bold text-white mb-1">{guardianArchetype}</h2>
-            <span className="text-xs text-sunbeam font-mono mb-4 block">Identity Guardian</span>
+            <span className="text-xs text-sunbeam font-mono mb-3 block">
+              {guardianArchetype === 'River Protector' && 'Hydrological Guardian'}
+              {guardianArchetype === 'Sun Keeper' && 'Atmospheric Guardian'}
+              {guardianArchetype === 'Pollinator Ally' && 'Biodiversity Guardian'}
+              {guardianArchetype === 'Mountain Keeper' && 'Lithospheric Guardian'}
+              {guardianArchetype === 'Forest Guardian' && 'Ecosystem Guardian'}
+            </span>
 
             {/* AI Environmental Identity Card */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-4 mb-4 flex flex-col gap-3 relative overflow-hidden">
@@ -588,7 +594,7 @@ export default function SanctuaryPage() {
               )}
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               <div>
                 <span className="text-xs uppercase tracking-wider text-text-secondary block mb-1">Whispering Personality</span>
                 <p className="font-serif text-sm italic text-text-secondary leading-relaxed select-text">
