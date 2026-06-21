@@ -242,32 +242,17 @@ describe('EcoTwin AI Identity Card — unlock threshold', () => {
     };
   }
 
-  it('0 logs → identity is LOCKED (less than 3)', () => {
-    expect(useEcosystemStore.getState().actionLogs.length).toBeLessThan(3);
+  it('0 logs → identity is LOCKED (less than 1)', () => {
+    expect(useEcosystemStore.getState().actionLogs.length).toBeLessThan(1);
   });
 
-  it('1 log → still LOCKED', () => {
+  it('1 log → UNLOCKED', () => {
     useEcosystemStore.getState().addActionLog(makeLog('l1', 'energy'));
-    expect(useEcosystemStore.getState().actionLogs.length).toBeLessThan(3);
-  });
-
-  it('2 logs → still LOCKED', () => {
-    useEcosystemStore.getState().addActionLog(makeLog('l1', 'energy'));
-    useEcosystemStore.getState().addActionLog(makeLog('l2', 'energy'));
-    expect(useEcosystemStore.getState().actionLogs.length).toBeLessThan(3);
-  });
-
-  it('3 logs → UNLOCKED', () => {
-    useEcosystemStore.getState().addActionLog(makeLog('l1', 'energy'));
-    useEcosystemStore.getState().addActionLog(makeLog('l2', 'energy'));
-    useEcosystemStore.getState().addActionLog(makeLog('l3', 'energy'));
-    expect(useEcosystemStore.getState().actionLogs.length).toBeGreaterThanOrEqual(3);
+    expect(useEcosystemStore.getState().actionLogs.length).toBeGreaterThanOrEqual(1);
   });
 
   it('unlocked with transportation dominant → archetype is River Protector', () => {
     useEcosystemStore.getState().addActionLog(makeLog('l1', 'transportation'));
-    useEcosystemStore.getState().addActionLog(makeLog('l2', 'transportation'));
-    useEcosystemStore.getState().addActionLog(makeLog('l3', 'transportation'));
     useEcosystemStore.getState().applyActionImpact(0.01, 'transportation', 'positive');
     expect(useEcosystemStore.getState().guardianArchetype).toBe('River Protector');
   });

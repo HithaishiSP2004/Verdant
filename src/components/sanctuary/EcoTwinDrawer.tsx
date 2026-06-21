@@ -73,7 +73,7 @@ export function EcoTwinDrawer({
 
         <div className="flex items-center gap-2">
           <span className="text-[10px] uppercase font-mono tracking-wider text-sunbeam">AI Carbon & Environmental Identity</span>
-          {actionLogs.length >= 3 ? (
+          {actionLogs.length >= 1 ? (
             <span className="bg-emerald-500/20 text-emerald-300 text-[8px] font-mono uppercase px-1.5 py-0.5 rounded-full border border-emerald-500/30">
               Unlocked
             </span>
@@ -84,7 +84,7 @@ export function EcoTwinDrawer({
           )}
         </div>
 
-        {actionLogs.length >= 3 ? (
+        {actionLogs.length >= 1 ? (
           <div className="flex flex-col gap-2 mt-1">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-white/5 rounded-xl border border-white/10">
@@ -109,14 +109,14 @@ export function EcoTwinDrawer({
           </div>
         ) : (
           <div className="flex flex-col gap-2 mt-1">
-            <span className="font-serif text-sm font-medium text-white/60">Analyze 3 actions to reveal identity</span>
+            <span className="font-serif text-sm font-medium text-white/60">Analyze 1 action to reveal identity</span>
             <p className="font-sans text-[11px] text-text-secondary/60 leading-relaxed">
-              Log {3 - actionLogs.length} more actions under the canopy to unlock your custom AI Environmental Identity based on your habits.
+              Log 1 action under the canopy to unlock your custom AI Environmental Identity based on your habits.
             </p>
             <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden mt-1">
               <div 
                 className="h-full bg-sunbeam transition-all duration-500" 
-                style={{ width: `${(actionLogs.length / 3) * 100}%` }}
+                style={{ width: `${(actionLogs.length / 1) * 100}%` }}
               />
             </div>
           </div>
