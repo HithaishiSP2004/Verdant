@@ -159,7 +159,7 @@ export default function SanctuaryPage() {
             onClick={() => setLogActionModalOpen(true)}
             className="river-stone-btn py-4 px-8 text-stone-dark font-sans font-medium text-base tracking-wider bg-sunbeam border-none hover:bg-yellow-300 active:scale-95"
           >
-            🌱 Share Today's Story
+            ♻️ Log a Carbon Action
           </button>
         </div>
 

@@ -119,8 +119,16 @@ export default function Home() {
             <h1 className="font-serif text-6xl md:text-7xl font-bold tracking-tight text-white mb-2 select-text">
               VERDANT
             </h1>
-            <p className="font-sans text-sm md:text-base text-text-secondary tracking-widest uppercase mb-8 select-text">
-              Your Living Climate Companion
+            <div className="mb-2 flex flex-col items-center">
+              <p className="font-sans text-base md:text-lg text-white font-semibold tracking-widest uppercase select-text leading-tight">
+                Track. Understand. Reduce.
+              </p>
+              <p className="font-sans text-sm md:text-base text-sunbeam tracking-wider uppercase select-text">
+                Your Carbon Footprint Through AI.
+              </p>
+            </div>
+            <p className="font-sans text-xs text-text-secondary leading-relaxed text-center mb-8 max-w-sm select-text">
+              Log everyday habits in natural language. VERDANT analyzes carbon impact, builds your personal carbon identity, and simulates your environmental future.
             </p>
 
             {/* Landing Page Alignment Layer — challenge statement value props */}
@@ -192,8 +200,11 @@ export default function Home() {
               ))}
             </div>
  
-            {/* Entrance CTA */}
+            {/* Trust signal + CTA */}
             <div className="flex flex-col gap-4 w-full max-w-md">
+              <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest text-center">
+                Every action is analyzed, measured, and translated into real-world CO₂ impact.
+              </p>
               <button
                 onClick={handleDemoLogin}
                 disabled={loading}

@@ -99,16 +99,18 @@ export function HUDHeader({
       >
         <button
           onClick={() => setActivePanel(activePanel === 'reflection' ? null : 'reflection')}
-          className={`river-stone-btn flex items-center gap-2 ${activePanel === 'reflection' ? 'bg-sunbeam/20 border-sunbeam text-sunbeam' : ''}`}
+          className={`river-stone-btn flex items-center gap-1.5 ${activePanel === 'reflection' ? 'bg-sunbeam/20 border-sunbeam text-sunbeam' : ''}`}
         >
-          <span className="font-sans text-xs uppercase tracking-wider">EcoTwin (Carbon Identity)</span>
+          <span className="text-sm">🌿</span>
+          <span className="font-sans text-xs uppercase tracking-wider">EcoTwin</span>
         </button>
         
         <button
           onClick={() => setActivePanel(activePanel === 'logs' ? null : 'logs')}
-          className={`river-stone-btn flex items-center gap-2 ${activePanel === 'logs' ? 'bg-sunbeam/20 border-sunbeam text-sunbeam' : ''}`}
+          className={`river-stone-btn flex items-center gap-1.5 ${activePanel === 'logs' ? 'bg-sunbeam/20 border-sunbeam text-sunbeam' : ''}`}
         >
-          <span className="font-sans text-xs uppercase tracking-wider">Canopy Logs (Carbon History)</span>
+          <span className="text-sm">📋</span>
+          <span className="font-sans text-xs uppercase tracking-wider">Carbon Log</span>
         </button>
         
         <button

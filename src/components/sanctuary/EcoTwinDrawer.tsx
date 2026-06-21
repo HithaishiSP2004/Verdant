@@ -54,8 +54,8 @@ export function EcoTwinDrawer({
       className="absolute top-28 left-6 bottom-28 w-80 nature-card p-6 flex flex-col overflow-y-auto z-20 pointer-events-auto"
     >
       <div className="flex items-center justify-between mb-4">
-        <span className="text-[10px] uppercase tracking-widest text-text-secondary font-mono">EcoTwin Spirit — Carbon Identity Profile</span>
-        <button onClick={() => setActivePanel(null)} className="text-text-secondary hover:text-white">✕</button>
+        <span className="text-[9px] uppercase tracking-widest text-text-secondary font-mono whitespace-nowrap">EcoTwin — Carbon Identity Profile</span>
+        <button onClick={() => setActivePanel(null)} className="text-text-secondary hover:text-white ml-3 flex-shrink-0">✕</button>
       </div>
       
       <h2 className="font-serif text-2xl font-bold text-white mb-1">{guardianArchetype}</h2>
@@ -71,14 +71,14 @@ export function EcoTwinDrawer({
       <div className="bg-white/5 border border-white/10 rounded-2xl p-4 mb-4 flex flex-col gap-3 relative overflow-hidden">
         <div className="absolute -right-4 -bottom-4 w-16 h-16 bg-sunbeam/10 rounded-full blur-xl pointer-events-none" />
 
-        <div className="flex items-center gap-2">
-          <span className="text-[10px] uppercase font-mono tracking-wider text-sunbeam">AI Carbon & Environmental Identity</span>
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-[9px] uppercase font-mono tracking-wider text-sunbeam">AI Environmental Identity</span>
           {actionLogs.length >= 1 ? (
-            <span className="bg-emerald-500/20 text-emerald-300 text-[8px] font-mono uppercase px-1.5 py-0.5 rounded-full border border-emerald-500/30">
+            <span className="bg-emerald-500/20 text-emerald-300 text-[8px] font-mono uppercase px-1.5 py-0.5 rounded-full border border-emerald-500/30 flex-shrink-0">
               Unlocked
             </span>
           ) : (
-            <span className="bg-amber-500/20 text-amber-300 text-[8px] font-mono uppercase px-1.5 py-0.5 rounded-full border border-amber-500/30">
+            <span className="bg-amber-500/20 text-amber-300 text-[8px] font-mono uppercase px-1.5 py-0.5 rounded-full border border-amber-500/30 flex-shrink-0">
               Locked
             </span>
           )}
