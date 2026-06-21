@@ -46,7 +46,7 @@ export function HUDHeader({
         >
           <span className="text-2xl" role="img" aria-label="Ecosystem status">{vitalityInfo.emoji}</span>
           <div className="flex flex-col">
-            <span className="text-xs uppercase tracking-widest text-text-secondary">Sanctuary State</span>
+            <span className="text-[9px] uppercase tracking-widest text-text-secondary font-mono leading-none mb-1">Sanctuary State — Ecosystem Health</span>
             <span className="font-serif text-base font-bold text-white leading-tight">
               {vitalityInfo.status}
             </span>

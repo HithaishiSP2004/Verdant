@@ -23,11 +23,11 @@ export function CanopyLogbook({
       className="absolute top-28 right-6 bottom-28 w-80 nature-card p-6 flex flex-col overflow-y-auto z-20 pointer-events-auto"
     >
       <div className="flex items-center justify-between mb-6">
-        <span className="text-xs uppercase tracking-widest text-text-secondary">Canopy Logbook</span>
+        <span className="text-[10px] uppercase tracking-widest text-text-secondary font-mono">Canopy Logbook — Carbon History</span>
         <button onClick={() => setActivePanel(null)} className="text-text-secondary hover:text-white">✕</button>
       </div>
 
-      <h2 className="font-serif text-2xl font-bold text-white mb-6">Chronicles</h2>
+      <h2 className="font-serif text-2xl font-bold text-white mb-6">Carbon Chronicles</h2>
 
       <div className="flex flex-col gap-4 overflow-y-auto flex-1 pr-1">
         {actionLogs.length === 0 ? (

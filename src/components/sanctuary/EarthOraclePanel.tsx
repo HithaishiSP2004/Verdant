@@ -42,7 +42,7 @@ export function EarthOraclePanel({
       className="nature-card p-5 w-80 pointer-events-auto flex flex-col gap-3"
     >
       <div className="flex items-center justify-between">
-        <span className="text-xs uppercase tracking-widest text-text-secondary">The Earth Oracle</span>
+        <span className="text-[10px] uppercase tracking-widest text-text-secondary font-mono">The Earth Oracle — Future Carbon Projection</span>
         <button
           onClick={() => {
             setProjectionMode(!projectionMode);

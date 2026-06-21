@@ -54,7 +54,7 @@ export function EcoTwinDrawer({
       className="absolute top-28 left-6 bottom-28 w-80 nature-card p-6 flex flex-col overflow-y-auto z-20 pointer-events-auto"
     >
       <div className="flex items-center justify-between mb-4">
-        <span className="text-xs uppercase tracking-widest text-text-secondary">EcoTwin Spirit</span>
+        <span className="text-[10px] uppercase tracking-widest text-text-secondary font-mono">EcoTwin Spirit — Carbon Identity Profile</span>
         <button onClick={() => setActivePanel(null)} className="text-text-secondary hover:text-white">✕</button>
       </div>
       
@@ -72,7 +72,7 @@ export function EcoTwinDrawer({
         <div className="absolute -right-4 -bottom-4 w-16 h-16 bg-sunbeam/10 rounded-full blur-xl pointer-events-none" />
 
         <div className="flex items-center gap-2">
-          <span className="text-[10px] uppercase font-mono tracking-wider text-sunbeam">AI Environmental Identity</span>
+          <span className="text-[10px] uppercase font-mono tracking-wider text-sunbeam">AI Carbon & Environmental Identity</span>
           {actionLogs.length >= 3 ? (
             <span className="bg-emerald-500/20 text-emerald-300 text-[8px] font-mono uppercase px-1.5 py-0.5 rounded-full border border-emerald-500/30">
               Unlocked

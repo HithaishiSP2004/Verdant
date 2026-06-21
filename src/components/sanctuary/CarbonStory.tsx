@@ -15,7 +15,7 @@ export function CarbonStory({ carbonStory, co2Equivalency }: CarbonStoryProps) {
 
   return (
     <div className="border-t border-white/5 pt-4">
-      <span className="text-xs uppercase tracking-wider text-text-secondary block mb-2">My Carbon Story</span>
+      <span className="text-[10px] uppercase tracking-wider text-text-secondary font-mono block mb-2">My Carbon Story — Footprint Insights</span>
       <div className="bg-white/5 rounded-2xl p-4 flex flex-col gap-2 border border-white/5">
         <p className="font-serif text-[11px] italic text-text-secondary leading-relaxed select-text">
           Across <strong className="text-white not-italic">{carbonStory.logCount} actions</strong>, your strongest
