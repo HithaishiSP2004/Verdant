@@ -16,6 +16,18 @@
 >
 > VERDANT helps individuals **understand**, **track**, and **reduce** their carbon footprint through AI-powered environmental storytelling, future impact simulation, and a dynamic ecosystem that evolves with every decision.
 
+> [!IMPORTANT]
+> **VERDANT is not a carbon calculator.** Traditional calculators present raw numerical data that leads to climate fatigue. Instead, **VERDANT creates awareness through a living ecosystem.**
+> 
+> Here is how users interact with the platform:
+> 1. **Log habits** in simple, natural language.
+> 2. **Understand CO₂ impact** via poetic reflections and tangible real-world comparisons.
+> 3. **Receive a personalized AI identity** (EcoTwin) that adapts to category-specific behavior.
+> 4. **Get reduction recommendations** customized to daily habits.
+> 5. **Visualize a 5-year future** via the Earth Oracle split-timeline simulation.
+> 
+> This flow directly addresses the hackathon's core objective of driving long-term behavioral change.
+
 ---
 
 ## ⚡ Quick Evaluation Path
