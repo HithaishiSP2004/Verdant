@@ -159,6 +159,49 @@ export function EcoTwinDrawer({
           </div>
         </div>
 
+        <div className="border-t border-white/5 pt-4">
+          <div className="flex justify-between items-center mb-1.5">
+            <span className="text-xs uppercase tracking-wider text-text-secondary">Daily Carbon Target</span>
+            <span className="text-[10px] font-mono text-emerald-400 font-bold">5,000g Budget</span>
+          </div>
+          <div className="bg-white/5 rounded-xl p-3 border border-white/5">
+            <div className="flex justify-between text-[10px] font-mono text-text-secondary mb-1.5">
+              <span>Mitigated Today:</span>
+              <span className="text-white font-bold">{actionLogs.length > 0 ? `${actionLogs.reduce((sum, log) => sum + (log.co2SavedG || 0), 0)}g` : '0g'}</span>
+            </div>
+            <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-emerald-400 transition-all duration-500" 
+                style={{ width: `${Math.min(100, (actionLogs.reduce((sum, log) => sum + (log.co2SavedG || 0), 0) / 5000) * 100)}%` }}
+              />
+            </div>
+            <p className="text-[9px] text-text-secondary leading-normal mt-2">
+              {actionLogs.reduce((sum, log) => sum + (log.co2SavedG || 0), 0) >= 5000 
+                ? "🎉 Met daily carbon mitigation target!"
+                : `Mitigated ${Math.round(Math.min(100, (actionLogs.reduce((sum, log) => sum + (log.co2SavedG || 0), 0) / 5000) * 100))}% of the standard daily carbon footprint baseline.`
+              }
+            </p>
+          </div>
+        </div>
+
+        <div className="border-t border-white/5 pt-4">
+          <span className="text-xs uppercase tracking-wider text-text-secondary block mb-2">Carbon Footprint 101</span>
+          <div className="bg-white/5 rounded-xl p-3 border border-white/5 flex flex-col gap-2">
+            <div>
+              <span className="text-[10px] font-bold text-white block mb-0.5">What is a Carbon Footprint?</span>
+              <p className="text-[10px] text-text-secondary leading-normal">
+                The total volume of greenhouse gas emissions (in CO₂ equivalents) resulting from our energy, travel, and food choices.
+              </p>
+            </div>
+            <div>
+              <span className="text-[10px] font-bold text-white block mb-0.5">Why Track and Reduce?</span>
+              <p className="text-[10px] text-text-secondary leading-normal">
+                To combat climate change, we must reduce individual carbon footprints to under 5kg (5,000g) of CO₂ daily.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <CarbonStory carbonStory={carbonStory} co2Equivalency={co2Equivalency} />
       </div>
     </motion.div>

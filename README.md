@@ -42,7 +42,7 @@ VERDANT is designed to be explored immediately.
 | Code Quality | TypeScript throughout, strict Zod schemas, modular Zustand stores, typed Gemini response schemas |
 | Security | Server-side AI key isolation, Supabase Row Level Security, Zod input validation, error sanitization |
 | Efficiency | Low-poly R3F rendering, heuristic offline fallback `< 5ms`, Turbopack build `< 4s`, zero client-side secrets |
-| Testing | 103 automated tests across unit, integration, and E2E accessibility tiers — all passing |
+| Testing | 101 automated tests across unit, integration, and E2E accessibility tiers — all passing |
 | Accessibility | High contrast mode, prefers-reduced-motion sync, ARIA live regions, keyboard navigation, skip links |
 
 ---
@@ -140,7 +140,7 @@ Users describe actions in plain language. A robust 4-model fallback chain (`gemi
 A high-fidelity heuristic fallback engine handles offline or key-absent scenarios with zero degradation to the demonstration experience.
 
 ### EcoTwin Environmental Identity
-After three logged actions, the system evaluates the user's dominant behavior category and assigns one of five guardian archetypes — updated live after every subsequent action:
+After a single logged action, the system evaluates the user's dominant behavior category and assigns one of five guardian archetypes — updated live after every subsequent action:
 
 | Archetype | Dominant Category | Description |
 |---|---|---|
@@ -266,11 +266,11 @@ Security is enforced at every layer of the stack:
 
 ## Testing
 
-VERDANT ships with **103 automated tests** across three tiers, providing comprehensive coverage of the core domain logic, API layer, and UI state machine.
+VERDANT ships with **101 automated tests** across three tiers, providing comprehensive coverage of the core domain logic, API layer, and UI state machine.
 
 ```
 Test Suites: 5
-Tests:       103 passed (103)
+Tests:       101 passed (101)
 ```
 
 ### Coverage Map
@@ -281,7 +281,7 @@ Tests:       103 passed (103)
 | Unit | `decay.test.ts` | 10 | Natural inactivity decay model, action impact math |
 | Unit | `store.test.ts` | 3 | Store lifecycle, weather transitions, archetype tie-breaking |
 | Integration | `api.test.ts` | 24 | Oracle procedural fallback (Y1/Y3/Y5), Analyze keyword mapper, score/weather math |
-| E2E State | `accessibility.test.ts` | 30 | High contrast, reduced motion, panel navigation, Oracle UI state, EcoTwin unlock threshold, ARIA live text |
+| E2E State | `accessibility.test.ts` | 28 | High contrast, reduced motion, panel navigation, Oracle UI state, EcoTwin unlock threshold, ARIA live text |
 
 ### Running Tests
 

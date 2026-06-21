@@ -57,7 +57,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col items-center justify-center bg-forest-deep overflow-hidden select-none">
+    <div className="relative w-screen h-screen flex flex-col items-center justify-start md:justify-center bg-forest-deep overflow-y-auto py-8 md:py-12 select-none">
       
       {/* Dynamic atmospheric fog drift background */}
       <div className="absolute inset-0 opacity-40 mix-blend-color-dodge pointer-events-none">
@@ -113,31 +113,31 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
-            className="flex flex-col items-center text-center max-w-lg px-6 z-10"
+            className="flex flex-col items-center text-center max-w-lg px-6 z-10 w-full"
           >
             {/* Logo and Titles */}
-            <h1 className="font-serif text-6xl md:text-7xl font-bold tracking-tight text-white mb-2 select-text">
+            <h1 className="font-serif text-5xl md:text-6xl font-extrabold tracking-widest bg-gradient-to-b from-white via-emerald-100 to-sunbeam bg-clip-text text-transparent mb-1 select-text drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]">
               VERDANT
             </h1>
-            <div className="mb-2 flex flex-col items-center">
-              <p className="font-sans text-base md:text-lg text-white font-semibold tracking-widest uppercase select-text leading-tight">
+            <div className="mb-1 flex flex-col items-center">
+              <p className="font-sans text-sm md:text-base text-white font-semibold tracking-widest uppercase select-text leading-tight">
                 Track. Understand. Reduce.
               </p>
-              <p className="font-sans text-sm md:text-base text-sunbeam tracking-wider uppercase select-text">
+              <p className="font-sans text-xs md:text-sm text-sunbeam tracking-wider uppercase select-text">
                 Your Carbon Footprint Through AI.
               </p>
             </div>
-            <p className="font-sans text-xs text-text-secondary leading-relaxed text-center mb-8 max-w-sm select-text">
+            <p className="font-sans text-[11px] text-text-secondary leading-relaxed text-center mb-4 max-w-sm select-text">
               Log everyday habits in natural language. VERDANT analyzes carbon impact, builds your personal carbon identity, and simulates your environmental future.
             </p>
 
             {/* Landing Page Alignment Layer — challenge statement value props */}
-            <div className="flex flex-col gap-3.5 mb-8 w-full max-w-md text-left">
+            <div className="grid grid-cols-2 gap-3 mb-5 w-full max-w-md text-left">
               {[
                 { 
                   icon: (
-                    <div className="bg-sunbeam/10 border border-sunbeam/20 p-2.5 rounded-xl flex-shrink-0 flex items-center justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-sunbeam">
+                    <div className="bg-sunbeam/10 border border-sunbeam/20 p-1.5 rounded-lg flex-shrink-0 flex items-center justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-sunbeam">
                         <path d="M12 20h9" />
                         <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
                       </svg>
@@ -148,8 +148,8 @@ export default function Home() {
                 },
                 { 
                   icon: (
-                    <div className="bg-emerald-500/10 border border-emerald-500/20 p-2.5 rounded-xl flex-shrink-0 flex items-center justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-emerald-400">
+                    <div className="bg-emerald-500/10 border border-emerald-500/20 p-1.5 rounded-lg flex-shrink-0 flex items-center justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-emerald-400">
                         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8A7 7 0 0 1 11 20z" />
                         <path d="M9 22v-4h4" />
                       </svg>
@@ -160,8 +160,8 @@ export default function Home() {
                 },
                 { 
                   icon: (
-                    <div className="bg-river/10 border border-river/20 p-2.5 rounded-xl flex-shrink-0 flex items-center justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-river">
+                    <div className="bg-river/10 border border-river/20 p-1.5 rounded-lg flex-shrink-0 flex items-center justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-river">
                         <path d="m22 17-6-6-4 4-6-6-4 4" />
                         <path d="M16 17h6v-6" />
                       </svg>
@@ -172,8 +172,8 @@ export default function Home() {
                 },
                 { 
                   icon: (
-                    <div className="bg-wildflower/10 border border-wildflower/20 p-2.5 rounded-xl flex-shrink-0 flex items-center justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-wildflower">
+                    <div className="bg-wildflower/10 border border-wildflower/20 p-1.5 rounded-lg flex-shrink-0 flex items-center justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-wildflower">
                         <circle cx="12" cy="10" r="8" />
                         <path d="M12 2v2" />
                         <path d="M12 18v2" />
@@ -187,49 +187,65 @@ export default function Home() {
                     </div>
                   ), 
                   label: 'Visualise', 
-                  desc: 'Simulate your 5-year Earth Oracle future' 
+                  desc: 'See your 5-year carbon future' 
                 },
-              ].map(({ icon, label, desc }) => (
-                <div key={label} className="flex items-center gap-4 bg-white/[0.03] hover:bg-white/[0.06] rounded-2xl p-3 border border-white/[0.04] transition-all duration-300 hover:scale-[1.02] hover:border-white/[0.08] group">
-                  {icon}
-                  <span className="text-xs text-text-secondary leading-normal">
-                    <strong className="text-white font-medium block text-sm mb-0.5 group-hover:text-sunbeam transition-colors duration-300">{label}</strong>
-                    {desc}
-                  </span>
-                </div>
-              ))}
+              ].map(({ icon, label, desc }) => {
+                const isUnderstand = label === 'Understand';
+                return (
+                  <div 
+                    key={label} 
+                    className={`flex flex-col items-start gap-1 rounded-xl py-2.5 px-3.5 border transition-all duration-300 hover:scale-[1.02] group ${
+                      isUnderstand 
+                        ? 'bg-emerald-500/10 border-emerald-400/40 hover:bg-emerald-500/15 hover:border-emerald-400/50' 
+                        : 'bg-white/[0.02] border-white/[0.04] hover:bg-white/[0.05] hover:border-white/[0.07]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      {icon}
+                      <strong className={`font-serif text-sm tracking-wide transition-colors duration-300 ${isUnderstand ? 'text-emerald-350 group-hover:text-emerald-300' : 'text-white group-hover:text-sunbeam'}`}>{label}</strong>
+                    </div>
+                    <span className="text-[10px] text-text-secondary leading-normal mt-0.5">
+                      {desc}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
- 
-            {/* Judge Hook Section — 4 core capability chips, max ~80px */}
-            <div className="grid grid-cols-2 gap-2 w-full max-w-md mb-1">
-              {[
-                { icon: '🤖', label: 'AI Carbon Analysis' },
-                { icon: '🪪', label: 'Personalized Carbon Identity' },
-                { icon: '♻️', label: 'CO₂ Tracking' },
-                { icon: '🔮', label: '5-Year Future Projection' },
-              ].map(({ icon, label }) => (
-                <div key={label} className="flex items-center gap-2 bg-white/[0.04] border border-white/[0.07] rounded-xl px-3 py-2">
-                  <span className="text-base flex-shrink-0">{icon}</span>
-                  <span className="text-[10px] text-text-secondary font-sans leading-tight">{label}</span>
-                </div>
-              ))}
+
+            {/* Elegant Horizontal Capability Pill */}
+            <div className="w-full max-w-md mb-6 flex justify-center">
+              <div className="inline-flex items-center justify-center gap-3.5 md:gap-4.5 bg-white/[0.03] border border-white/[0.05] rounded-full px-4.5 py-1.5 backdrop-blur-sm shadow-inner hover:bg-white/[0.05] transition-all duration-300">
+                <span className="text-[9px] md:text-[10px] text-text-secondary font-sans font-medium flex items-center gap-1 select-none">
+                  <span>🤖</span> <span className="text-white/80">AI Analysis</span>
+                </span>
+                <span className="text-[9px] md:text-[10px] text-text-secondary font-sans font-medium flex items-center gap-1 select-none">
+                  <span>♻️</span> <span className="text-white/80">CO₂ Tracking</span>
+                </span>
+                <span className="text-[9px] md:text-[10px] text-text-secondary font-sans font-medium flex items-center gap-1 select-none">
+                  <span>🌿</span> <span className="text-white/80">Carbon Identity</span>
+                </span>
+                <span className="text-[9px] md:text-[10px] text-text-secondary font-sans font-medium flex items-center gap-1 select-none">
+                  <span>🔮</span> <span className="text-white/80">Future Projection</span>
+                </span>
+              </div>
             </div>
 
             {/* Trust signal + CTA */}
-            <div className="flex flex-col gap-4 w-full max-w-md">
-              <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest text-center">
-                Every action is analyzed, measured, and translated into real-world CO₂ impact.
+            <div className="flex flex-col gap-3.5 w-full max-w-md">
+              <p className="text-[10px] md:text-[11px] text-white/80 font-mono uppercase tracking-widest text-center leading-normal">
+                Every action is analyzed by AI, measured in CO₂, and translated into real-world impact.
               </p>
               <button
                 onClick={handleDemoLogin}
                 disabled={loading}
-                className="river-stone-btn py-4 text-stone-dark font-sans font-medium text-base tracking-wider bg-sunbeam border-none hover:bg-yellow-300 active:scale-95 disabled:opacity-50"
+                className="w-full py-3.5 rounded-full font-sans font-bold text-sm md:text-base tracking-wider bg-sunbeam hover:bg-white active:scale-95 disabled:opacity-50 transition-all duration-300 shadow-[0_0_12px_rgba(245,197,95,0.18)] hover:shadow-[0_0_18px_rgba(245,197,95,0.32)] cursor-pointer"
+                style={{ color: 'var(--stone-dark)' }}
               >
-                {loading ? 'Entering Sanctuary...' : 'Step Inside'}
+                {loading ? 'Entering Carbon Sanctuary...' : 'Start Tracking My Carbon Footprint'}
               </button>
               
-              <p className="text-xs text-text-secondary italic mt-2">
-                Clicking will initialize your natural sanctuary sandbox.
+              <p className="text-[10px] text-text-secondary italic">
+                Start tracking your impact in less than 10 seconds.
               </p>
             </div>
           </motion.div>

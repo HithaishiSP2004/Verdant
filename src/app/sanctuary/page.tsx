@@ -204,6 +204,10 @@ export default function SanctuaryPage() {
             actionLogs={actionLogs}
             prefersReducedMotion={prefersReducedMotion}
             setActivePanel={setActivePanel}
+            onSelectRoadmapItem={(text) => {
+              setHabitText(text);
+              setLogActionModalOpen(true);
+            }}
           />
         )}
 

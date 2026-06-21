@@ -39,7 +39,7 @@ export function EarthOraclePanel({
       }}
       transition={prefersReducedMotion ? { duration: 0 } : undefined}
       style={{ pointerEvents: activePanel === 'logs' ? 'none' : 'auto' }}
-      className="nature-card p-5 w-80 pointer-events-auto flex flex-col gap-3"
+      className="nature-card p-5 w-80 pointer-events-auto flex flex-col gap-3 max-h-[70vh] md:max-h-[66vh] overflow-y-auto"
     >
       <div className="flex items-center justify-between">
         <span className="text-[10px] uppercase tracking-widest text-text-secondary font-mono">The Earth Oracle — Future Carbon Projection</span>
