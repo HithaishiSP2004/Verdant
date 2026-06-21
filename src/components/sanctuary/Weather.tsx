@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useEcosystemStore } from '@/store/useEcosystemStore';
 import { useUIStore } from '@/store/useUIStore';
@@ -70,8 +70,10 @@ export function Weather() {
     return { fogColor, skyColor, particleCount, particleColor, activeWeather };
   }, [weatherCondition, projectionMode, projectionYearOffset, prefersReducedMotion, highContrastMode]);
 
-  // Set the scene background color matching the active sky
-  scene.background = new THREE.Color(atmosphere.skyColor);
+  // Set the scene background color matching the active sky inside useEffect
+  useEffect(() => {
+    scene.background = new THREE.Color(atmosphere.skyColor);
+  }, [scene, atmosphere.skyColor]);
 
   // Generate random positions for weather particles
   const particleGeo = useMemo(() => {

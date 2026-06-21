@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useEcosystemStore } from '@/store/useEcosystemStore';
 import { useUIStore } from '@/store/useUIStore';
@@ -31,6 +31,13 @@ export function Ground() {
     geo.computeVertexNormals();
     return geo;
   }, []);
+
+  // Dispose of the geometry when component unmounts to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      geometry.dispose();
+    };
+  }, [geometry]);
 
   // Determine ground material color dynamically based on ecological state
   const groundColor = useMemo(() => {
