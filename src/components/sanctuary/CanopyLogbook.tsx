@@ -78,8 +78,12 @@ export function CanopyLogbook({
       <h2 className="font-serif text-2xl font-bold text-white mb-4">Carbon Chronicles</h2>
 
       {/* Tab Switcher */}
-      <div className="flex bg-white/5 p-1 rounded-xl mb-4 border border-white/5 flex-shrink-0">
+      <div className="flex bg-white/5 p-1 rounded-xl mb-4 border border-white/5 flex-shrink-0" role="tablist" aria-label="Carbon log views">
         <button
+          role="tab"
+          aria-selected={tab === 'history'}
+          aria-controls="panel-history"
+          id="tab-history"
           onClick={() => setTab('history')}
           className={`flex-1 text-center py-1.5 rounded-lg text-[10px] font-mono uppercase tracking-wider transition-all ${
             tab === 'history'
@@ -90,6 +94,10 @@ export function CanopyLogbook({
           History
         </button>
         <button
+          role="tab"
+          aria-selected={tab === 'roadmap'}
+          aria-controls="panel-roadmap"
+          id="tab-roadmap"
           onClick={() => setTab('roadmap')}
           className={`flex-1 text-center py-1.5 rounded-lg text-[10px] font-mono uppercase tracking-wider transition-all ${
             tab === 'roadmap'
@@ -102,7 +110,7 @@ export function CanopyLogbook({
       </div>
 
       {tab === 'history' ? (
-        <div className="flex flex-col gap-4 overflow-y-auto flex-1 pr-1">
+        <div id="panel-history" role="tabpanel" aria-labelledby="tab-history" className="flex flex-col gap-4 overflow-y-auto flex-1 pr-1">
           {actionLogs.length === 0 ? (
             <p className="text-xs text-text-secondary italic text-center py-12">
               No carbon actions logged yet. Start by sharing a sustainable habit — every action is analyzed for CO₂ impact and tracked in your carbon history.
@@ -130,7 +138,7 @@ export function CanopyLogbook({
           )}
         </div>
       ) : (
-        <div className="flex flex-col gap-4 overflow-y-auto flex-1 pr-1">
+        <div id="panel-roadmap" role="tabpanel" aria-labelledby="tab-roadmap" className="flex flex-col gap-4 overflow-y-auto flex-1 pr-1">
           <div className="mb-2 text-center bg-emerald-500/5 border border-emerald-500/10 rounded-xl p-3">
             <span className="text-[10px] uppercase font-mono tracking-wider text-emerald-400 font-bold block mb-1">
               🌿 Action Roadmap

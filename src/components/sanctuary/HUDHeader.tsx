@@ -99,17 +99,21 @@ export function HUDHeader({
       >
         <button
           onClick={() => setActivePanel(activePanel === 'reflection' ? null : 'reflection')}
+          aria-label="Open EcoTwin Carbon Identity Panel"
+          aria-pressed={activePanel === 'reflection'}
           className={`river-stone-btn flex items-center gap-1.5 ${activePanel === 'reflection' ? 'bg-sunbeam/20 border-sunbeam text-sunbeam' : ''}`}
         >
-          <span className="text-sm">🌿</span>
+          <span className="text-sm" aria-hidden="true">🌿</span>
           <span className="font-sans text-xs uppercase tracking-wider">EcoTwin</span>
         </button>
         
         <button
           onClick={() => setActivePanel(activePanel === 'logs' ? null : 'logs')}
+          aria-label="Open Carbon Action Log"
+          aria-pressed={activePanel === 'logs'}
           className={`river-stone-btn flex items-center gap-1.5 ${activePanel === 'logs' ? 'bg-sunbeam/20 border-sunbeam text-sunbeam' : ''}`}
         >
-          <span className="text-sm">📋</span>
+          <span className="text-sm" aria-hidden="true">📋</span>
           <span className="font-sans text-xs uppercase tracking-wider">Carbon Log</span>
         </button>
         

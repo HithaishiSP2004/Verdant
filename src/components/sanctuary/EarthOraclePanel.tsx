@@ -16,6 +16,8 @@ interface EarthOraclePanelProps {
     continuation: { narrative: string; indicators: string[] };
     regeneration: { narrative: string; indicators: string[] };
   } | null;
+  actionLogCount: number;
+  vitalityScore: number;
 }
 
 export function EarthOraclePanel({
@@ -28,7 +30,9 @@ export function EarthOraclePanel({
   projectionPath,
   setProjectionPath,
   oracleLoading,
-  oracleResults
+  oracleResults,
+  actionLogCount,
+  vitalityScore
 }: EarthOraclePanelProps) {
   return (
     <motion.div
@@ -100,6 +104,11 @@ export function EarthOraclePanel({
                 const yearVal = [0, 1, 3, 5][stepVal];
                 setProjectionYearOffset(yearVal);
               }}
+              aria-label="Future projection year slider"
+              aria-valuemin={0}
+              aria-valuemax={5}
+              aria-valuenow={projectionYearOffset}
+              aria-valuetext={projectionYearOffset === 0 ? 'Today' : `${projectionYearOffset} year${projectionYearOffset > 1 ? 's' : ''} from now`}
               className="w-full accent-sunbeam cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-text-secondary font-mono tracking-wider px-1">
@@ -147,8 +156,19 @@ export function EarthOraclePanel({
                   <span className="text-[9px] uppercase font-mono tracking-widest text-sunbeam">
                     {projectionPath === 'continuation' ? 'Timeline of Continuation' : 'Timeline of Regeneration'}
                   </span>
+                  {/* CO₂ context line — ties projection to real user data */}
+                  {actionLogCount > 0 && (
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[9px] font-mono text-text-secondary bg-white/5 border border-white/10 rounded-full px-2 py-0.5">
+                        Based on: <strong className="text-emerald-400">{actionLogCount} carbon action{actionLogCount > 1 ? 's' : ''} logged</strong>
+                      </span>
+                      <span className="text-[9px] font-mono text-text-secondary bg-white/5 border border-white/10 rounded-full px-2 py-0.5">
+                        Vitality: <strong className="text-sunbeam">{Math.round(vitalityScore * 100)}%</strong>
+                      </span>
+                    </div>
+                  )}
                   <p className="text-[11px] text-text-secondary italic leading-relaxed select-text">
-                    "{projectionPath === 'continuation' ? oracleResults.continuation.narrative : oracleResults.regeneration.narrative}"
+                    &ldquo;{projectionPath === 'continuation' ? oracleResults.continuation.narrative : oracleResults.regeneration.narrative}&rdquo;
                   </p>
                   <div className="border-t border-white/5 pt-2 mt-1 flex flex-col gap-1.5">
                     <span className="text-[9px] uppercase font-mono tracking-widest text-text-secondary">Ecosystem Indicators</span>

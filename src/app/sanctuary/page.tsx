@@ -174,6 +174,8 @@ export default function SanctuaryPage() {
           setProjectionPath={setProjectionPath}
           oracleLoading={oracleLoading}
           oracleResults={oracleResults}
+          actionLogCount={actionLogs.length}
+          vitalityScore={vitalityScore}
         />
       </footer>
 

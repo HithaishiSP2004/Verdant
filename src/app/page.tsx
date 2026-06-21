@@ -202,7 +202,7 @@ export default function Home() {
                   >
                     <div className="flex items-center gap-2">
                       {icon}
-                      <strong className={`font-serif text-sm tracking-wide transition-colors duration-300 ${isUnderstand ? 'text-emerald-350 group-hover:text-emerald-300' : 'text-white group-hover:text-sunbeam'}`}>{label}</strong>
+                      <strong className={`font-serif text-sm tracking-wide transition-colors duration-300 ${isUnderstand ? 'text-emerald-300 group-hover:text-emerald-200' : 'text-white group-hover:text-sunbeam'}`}>{label}</strong>
                     </div>
                     <span className="text-[10px] text-text-secondary leading-normal mt-0.5">
                       {desc}
@@ -214,7 +214,7 @@ export default function Home() {
 
             {/* Elegant Horizontal Capability Pill */}
             <div className="w-full max-w-md mb-6 flex justify-center">
-              <div className="inline-flex items-center justify-center gap-3.5 md:gap-4.5 bg-white/[0.03] border border-white/[0.05] rounded-full px-4.5 py-1.5 backdrop-blur-sm shadow-inner hover:bg-white/[0.05] transition-all duration-300">
+              <div className="inline-flex items-center justify-center gap-3.5 md:gap-5 bg-white/[0.03] border border-white/[0.05] rounded-full px-5 py-1.5 backdrop-blur-sm shadow-inner hover:bg-white/[0.05] transition-all duration-300">
                 <span className="text-[9px] md:text-[10px] text-text-secondary font-sans font-medium flex items-center gap-1 select-none">
                   <span>🤖</span> <span className="text-white/80">AI Analysis</span>
                 </span>
