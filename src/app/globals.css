@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Design Lock v1.1 HSL Colors */
+  --forest-deep: hsl(146, 28%, 18%);
+  --moss: hsl(138, 25%, 33%);
+  --mist: hsl(188, 22%, 88%);
+  --sunbeam: hsl(42, 92%, 76%);
+  
+  /* Accent Colors */
+  --wildflower: hsl(320, 45%, 74%);
+  --river: hsl(198, 58%, 64%);
+  
+  /* Text and Interface Tones */
+  --text-primary: hsl(188, 20%, 96%);
+  --text-secondary: hsl(188, 10%, 75%);
+  --stone-dark: hsl(146, 20%, 12%);
+  --stone-light: hsl(188, 15%, 90%);
+}
+
+@theme {
+  --color-forest-deep: var(--forest-deep);
+  --color-moss: var(--moss);
+  --color-mist: var(--mist);
+  --color-sunbeam: var(--sunbeam);
+  --color-wildflower: var(--wildflower);
+  --color-river: var(--river);
+  
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* Accessibility & Dynamic High-Contrast Mode */
+.high-contrast {
+  --forest-deep: hsl(220, 45%, 12%) !important;
+  --moss: hsl(220, 30%, 25%) !important;
+  --mist: hsl(0, 0%, 98%) !important;
+  --sunbeam: hsl(45, 90%, 55%) !important;
+  --river: hsl(210, 80%, 65%) !important;
+  --wildflower: hsl(340, 85%, 65%) !important;
+  --text-primary: #ffffff !important;
+  --text-secondary: #e0e0e0 !important;
+}
+
+body {
+  background-color: var(--forest-deep);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Organic Transparency Components (Fog / Mist / Dew panels) */
+.nature-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating scroll components */
+.nature-scroll {
+  background: rgba(255, 253, 245, 0.06);
+  backdrop-filter: blur(12px);
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* River Stone UI Controls */
+.river-stone-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.river-stone-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--sunbeam);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.river-stone-btn:active {
+  transform: translateY(0);
+}
+
+/* Visually Hidden Skip Links for screen readers */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--moss);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Premium Minimalist Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
