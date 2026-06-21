@@ -32,7 +32,7 @@ export function CanopyLogbook({
       <div className="flex flex-col gap-4 overflow-y-auto flex-1 pr-1">
         {actionLogs.length === 0 ? (
           <p className="text-xs text-text-secondary italic text-center py-12">
-            No actions logged under the canopy yet. Share today's story to begin.
+            No carbon actions logged yet. Start by sharing a sustainable habit — every action is analyzed for CO₂ impact and tracked in your carbon history.
           </p>
         ) : (
           actionLogs.map((log) => (

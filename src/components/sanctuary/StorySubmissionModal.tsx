@@ -56,8 +56,9 @@ export function StorySubmissionModal({
           ✕
         </button>
 
-        <span className="text-xs uppercase tracking-widest text-text-secondary block mb-2">Daily Reflections</span>
-        <h2 className="font-serif text-3xl font-bold text-white mb-6">Share Today's Story</h2>
+        <span className="text-xs uppercase tracking-widest text-text-secondary block mb-2">Carbon Action Log</span>
+        <h2 className="font-serif text-3xl font-bold text-white mb-4">Log a Carbon Action</h2>
+        <p className="text-xs text-text-secondary leading-relaxed mb-6">Describe a habit or activity and VERDANT will estimate its carbon footprint impact.</p>
 
         <AnimatePresence mode="wait">
           {!lastAnalysisResult ? (
@@ -65,7 +66,7 @@ export function StorySubmissionModal({
             <form key="input-form" onSubmit={handleLogSubmit} className="flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <label htmlFor="habit-input" className="text-xs text-text-secondary">
-                  Describe your real-world sustainable habit or carbon impact:
+                  Describe your real-world habit or carbon footprint activity:
                 </label>
                 <textarea
                   id="habit-input"

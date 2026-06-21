@@ -63,6 +63,28 @@ export function EarthOraclePanel({
 
       <span className="font-serif text-base text-white block">Future Projection</span>
 
+      {/* FIX 4: Carbon Outlook block — always visible when Oracle is active */}
+      {projectionMode && (
+        <div className="flex gap-2 text-[10px] font-mono">
+          <div className={`flex-1 rounded-xl px-3 py-2 border ${
+            projectionPath === 'regeneration'
+              ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
+              : 'bg-white/5 border-white/10 text-text-secondary'
+          }`}>
+            <span className="uppercase tracking-widest block mb-0.5 font-bold">Regeneration</span>
+            <span className="leading-relaxed">Lower future emissions through sustained positive actions.</span>
+          </div>
+          <div className={`flex-1 rounded-xl px-3 py-2 border ${
+            projectionPath === 'continuation'
+              ? 'bg-red-500/10 border-red-500/30 text-red-300'
+              : 'bg-white/5 border-white/10 text-text-secondary'
+          }`}>
+            <span className="uppercase tracking-widest block mb-0.5 font-bold">Continuation</span>
+            <span className="leading-relaxed">Higher future emissions if current habits continue.</span>
+          </div>
+        </div>
+      )}
+
       {projectionMode ? (
         <div className="flex flex-col gap-3">
           {/* Year steps horizontal timeline slider */}
@@ -147,7 +169,7 @@ export function EarthOraclePanel({
         </div>
       ) : (
         <p className="text-xs text-text-secondary leading-relaxed">
-          Unlock temporal oracle mode to see how your choices shape tomorrow.
+          Activate the Oracle to simulate how your carbon habits shape future environmental outcomes.
         </p>
       )}
     </motion.div>
