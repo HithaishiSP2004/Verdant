@@ -12,14 +12,17 @@ export async function POST(request: Request) {
     const isSandbox = process.env.NEXT_PUBLIC_SUPABASE_URL?.includes('local-sandbox') || process.env.NODE_ENV === 'development';
     let user = null;
     let supabase = null;
+    let isGuestMode = isSandbox;
 
     if (!isSandbox) {
       supabase = await createClient();
       const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
       if (authError || !authUser) {
-        return NextResponse.json({ error: 'Unauthorized access' }, { status: 401 });
+        isGuestMode = true;
+        user = { id: 'demo-user-id', email: 'demo@verdant.earth' };
+      } else {
+        user = authUser;
       }
-      user = authUser;
     } else {
       user = { id: 'demo-user-id', email: 'demo@verdant.earth' };
     }
@@ -138,7 +141,7 @@ export async function POST(request: Request) {
       };
     }
 
-    if (isSandbox) {
+    if (isGuestMode) {
       // Offline/Sandbox mode: mock state transitions
       const currentScore = 0.6; // Mock initial score
       const delta = Number(analysis.vitality_delta);

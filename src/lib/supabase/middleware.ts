@@ -34,22 +34,7 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   // Authentication gate redirects:
-  // If no user exists and request is targeted to /sanctuary, redirect to login page.
-  if (
-    !user &&
-    request.nextUrl.pathname.startsWith('/sanctuary')
-  ) {
-    // Bypass authentication redirect if running in local sandbox mode or development
-    if (
-      process.env.NEXT_PUBLIC_SUPABASE_URL?.includes('local-sandbox') ||
-      process.env.NODE_ENV === 'development'
-    ) {
-      return supabaseResponse;
-    }
-    const url = request.nextUrl.clone();
-    url.pathname = '/';
-    return NextResponse.redirect(url);
-  }
+  // Allow all visitors to access the sanctuary. Authenticated users still have session cookies processed.
 
   // If user is logged in but browsing landing, redirect to sanctuary.
   if (user && request.nextUrl.pathname === '/') {
