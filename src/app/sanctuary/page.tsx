@@ -134,6 +134,7 @@ export default function SanctuaryPage() {
         totalCo2Saved={totalCo2Saved}
         totalCo2Display={totalCo2Display}
         co2Equivalency={co2Equivalency}
+        carbonStory={carbonStory}
         activePanel={activePanel}
         setActivePanel={setActivePanel}
         highContrastMode={highContrastMode}
