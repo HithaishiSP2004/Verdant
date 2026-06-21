@@ -200,6 +200,21 @@ export default function Home() {
               ))}
             </div>
  
+            {/* Judge Hook Section — 4 core capability chips, max ~80px */}
+            <div className="grid grid-cols-2 gap-2 w-full max-w-md mb-1">
+              {[
+                { icon: '🤖', label: 'AI Carbon Analysis' },
+                { icon: '🪪', label: 'Personalized Carbon Identity' },
+                { icon: '♻️', label: 'CO₂ Tracking' },
+                { icon: '🔮', label: '5-Year Future Projection' },
+              ].map(({ icon, label }) => (
+                <div key={label} className="flex items-center gap-2 bg-white/[0.04] border border-white/[0.07] rounded-xl px-3 py-2">
+                  <span className="text-base flex-shrink-0">{icon}</span>
+                  <span className="text-[10px] text-text-secondary font-sans leading-tight">{label}</span>
+                </div>
+              ))}
+            </div>
+
             {/* Trust signal + CTA */}
             <div className="flex flex-col gap-4 w-full max-w-md">
               <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest text-center">
